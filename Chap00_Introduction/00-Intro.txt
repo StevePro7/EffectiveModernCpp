@@ -1,0 +1,16 @@
+00 Introduction
+14-Sep-2017
+
+
+TERMINOLOGY
+
+
+Move semantics
+C++11 most pervasive feature
+Foundation of move semantics distinguishing rvalues expressions from lvalues expressions
+
+rvalues indicate objects eligible for move operations
+lvalues generally don't
+
+rvalues : temporary objects returned from functions
+lvalues : refer to by name, following pointer or lvalue reference
