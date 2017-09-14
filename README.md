@@ -1,4 +1,4 @@
-# EffectiveModernCpp
+# Effective Modern C++
 42 Specific Ways to Improve Your Programs and Designs 
 
 ###### INTRO
