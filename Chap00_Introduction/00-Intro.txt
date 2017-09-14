@@ -7,10 +7,62 @@ TERMINOLOGY
 
 Move semantics
 C++11 most pervasive feature
-Foundation of move semantics distinguishing rvalues expressions from lvalues expressions
+The foundation of move semantics is distinguishing rvalues expressions from lvalues expressions
 
 rvalues indicate objects eligible for move operations
-lvalues generally don't
+lvalues generally don't!
 
 rvalues : temporary objects returned from functions
-lvalues : refer to by name, following pointer or lvalue reference
+lvalues : objects you can refer to by name, by following a pointer or lvalue reference
+
+
+Q.
+Can you take an object's address?
+Yes	lvalue
+No	rvalues
+
+
+NB:
+Type of expression is independent of whether expression is lvalue or rvalues
+Give a Type T, you can have lvalues of type T and rvalues of type TERMINOLOGY
+
+IMPORTANT
+Remember this when dealing with parameter of rvalue reference because parameter is an lvalue
+
+Example
+class Widget
+{
+public:
+	Widget(Widget&& rhs);		// rhs lvalue parameter
+};
+
+
+rhs is lvalue parameter though it has an rvalue reference type [Widge&&]
+ALL parameters are lvalues [because you can take rhs address]
+
+
+Parameters vs. Arguments
+
+Parameters
+w is the function parameter
+
+
+Arguments
+Widget wid;
+someFunc(wid);
+someFunc(std::move(wid))
+
+wid is argument
+std::move(wid) is the argument
+
+
+void someFunc(Widget w)
+
+Widget wid;
+someFunc(wid);
+wid is argument
+
+
+
+Move operations		move constructor	move assignment
+Copy operations		copy constructor	copy assignment
