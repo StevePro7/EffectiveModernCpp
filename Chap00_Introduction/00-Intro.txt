@@ -7,7 +7,7 @@ TERMINOLOGY
 
 Move semantics
 C++11 most pervasive feature
-The foundation of move semantics is distinguishing rvalues expressions from lvalues expressions
+The foundation of move semantics is distinguishing rvalue expressions from lvalue expressions
 
 rvalues indicate objects eligible for move operations
 lvalues generally don't!
@@ -18,42 +18,45 @@ lvalues : objects you can refer to by name, by following a pointer or lvalue ref
 
 Q.
 Can you take an object's address?
-Yes	lvalue
-No	rvalues
+Yes		lvalue
+No		rvalue
 
 
 NB:
-Type of expression is independent of whether expression is lvalue or rvalues
-Give a Type T, you can have lvalues of type T and rvalues of type TERMINOLOGY
+Type of an expression is independent of whether expression is lvalue or rvalue
+Give type T, you can have lvalues of type T and rvalues of type T
 
 IMPORTANT
-Remember this when dealing with parameter of rvalue reference because parameter is an lvalue
+Remember this when dealing with a parameter of rvalue reference type [Widget&& rhs]
+because the [function] parameter itself is an lvalue
+
 
 Example
 class Widget
 {
 public:
-	Widget(Widget&& rhs);		// rhs lvalue parameter
+	Widget( Widget&& rhs );		// rhs parameter is an lvalue although
+								// it has an rvalue reference [&&]type
 };
 
 
-rhs is lvalue parameter though it has an rvalue reference type [Widge&&]
-ALL parameters are lvalues [because you can take rhs address]
+rhs parameter is an lvalue 
+ALL parameters are lvalues 		[because you can take rhs address]
 
 
 Parameters vs. Arguments
 
 Parameters
-w is the function parameter
+void someFunc( Widget w );		// w is the function parameter
 
 
 Arguments
 Widget wid;
-someFunc(wid);
-someFunc(std::move(wid))
+someFunc( wid );				// wid is argument
+someFunc( std::move( wid ) )	// std::move(wid) is the argument
 
-wid is argument
-std::move(wid) is the argument
+
+
 
 
 void someFunc(Widget w)
