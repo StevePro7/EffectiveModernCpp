@@ -44,10 +44,27 @@ rhs parameter is an lvalue
 ALL parameters are lvalues 		[because you can take rhs address]
 
 
+Copy vs. Move
+copy of rvalue	move constructed
+copy of lvalue	copy constructed
+
+Move operations		move constructor	move assignment
+Copy operations		copy constructor	copy assignment
+
+
 Parameters vs. Arguments
+argument		expression passed at function call site		lvalues OR rvalues
+parameter		arguments used to initialize function		lvalues
+
+e.g.
+void someFunc( Widget w )		// w is [function] parameter
+Widget wid;
+someFunc( wid );				// wid is argument
+someFunc( std::move( wid ) )	// std::move(wid) is the argument
+
 
 Parameters
-void someFunc( Widget w );		// w is the function parameter
+void someFunc( Widget w );		// w is [function] parameter
 
 
 Arguments
@@ -56,16 +73,32 @@ someFunc( wid );				// wid is argument
 someFunc( std::move( wid ) )	// std::move(wid) is the argument
 
 
+Perfect forwarding
+Argument passed to function [parameter] passed to another function
+such that  original argument's rvalueness or lvalueness preserved
 
 
-
-void someFunc(Widget w)
-
-Widget wid;
-someFunc(wid);
-wid is argument
+Function Object
+any type that supports operator() member function		acts like a function
+also include callable objects in C++ e.g. member function pointers
 
 
+Closures
+Function objects created through lambda expresions
 
-Move operations		move constructor	move assignment
-Copy operations		copy constructor	copy assignment
+
+Analoguous
+function templates		templates that generate functions
+template functions		functions generated from function templates
+
+class templates			templates that generate classes
+template classes		classes generated from class templates
+
+
+Undefined behavior
+runtime behavior is unpredictable
+
+e.g.
+* include using square brackets ("[]") to index beyond the bounds of std::vector
+* dereferencing an uninitialized iterator
+* engaging in data race (i.e. two or more threads write simultaneously to memory location)
