@@ -6,6 +6,5 @@ Item 02: Understand auto type deduction
 
 
 SUMMARY
-
-
-
+* auto type deductions is usually the same astemplate type deduction but auto type deduction assumes that a braced initializer represents a std::initialier_list and template type dedcution doesn't
+* auto in a function return type or a lambda parameter implies template type deduction not auto type deduction
