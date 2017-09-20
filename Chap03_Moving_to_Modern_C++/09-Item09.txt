@@ -1,0 +1,11 @@
+09 Item09
+20-Sep-2017
+
+
+Item 09: Prefer alias declarations to typedefs
+
+
+SUMMARY
+* typedefs don't support templatizations but alias declarations do
+* Alias templates avoid the "::type" suffix and, in templates, the "typename" prefix often required to refer to typedefs
+* C++14 offers alias templates for all teh C++11 type traits transformations

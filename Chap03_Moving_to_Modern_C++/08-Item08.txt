@@ -1,0 +1,10 @@
+08 Item08
+20-Sep-2017
+
+
+Item 08: Prefer nullptr to 0 and NULL
+
+
+SUMMARY
+* Prefer nullptr to 0 and NULL
+* Avoid overloading on integral and pointer types
