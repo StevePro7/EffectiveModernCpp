@@ -1,0 +1,8 @@
+02 Item02
+20-Sep-2017
+
+
+Item 02: Understand auto type deduction
+
+
+SUMMARY

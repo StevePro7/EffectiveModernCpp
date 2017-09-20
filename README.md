@@ -19,7 +19,7 @@ https://github.com/SteveProXNA/EffectiveModernCpp
 - Chap02 auto
 - Chap03 Moving to Modern C++
 - Chap04 Smart Pointers
-- Chap05 Rvalue References, Move Semantics, and Perfet Forwarding
+- Chap05 Rvalue References, Move Semantics, and Perfect Forwarding
 - Chap06 Lambda Expressions
 - Chap07 The Concurrency API
 - Chap08 Tweaks

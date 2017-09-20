@@ -1,0 +1,8 @@
+04 Item04
+20-Sep-2017
+
+
+Item 04: Know how to view deduced types
+
+
+SUMMARY
