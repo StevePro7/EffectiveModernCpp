@@ -1,0 +1,11 @@
+05 Item05
+20-Sep-2017
+
+
+Item 05: Prefer auto to explicit type declarations
+
+
+SUMMARY
+
+
+

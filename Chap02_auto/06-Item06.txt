@@ -1,0 +1,11 @@
+06 Item06
+20-Sep-2017
+
+
+Item 06: Use teh explicitly typed initializer idiom when auto deduces undesired types
+
+
+SUMMARY
+
+
+
