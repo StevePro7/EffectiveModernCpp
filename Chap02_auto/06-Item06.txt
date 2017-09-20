@@ -6,6 +6,5 @@ Item 06: Use teh explicitly typed initializer idiom when auto deduces undesired 
 
 
 SUMMARY
-
-
-
+* "Invisible" proxy types can cause auto to deduce the "wrong" type for an initializing expression
+* The explicitly typed initializer idiom forces auto to deduce the types you want it to have
