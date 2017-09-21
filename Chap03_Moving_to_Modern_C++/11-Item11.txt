@@ -1,0 +1,10 @@
+11 Item11
+21-Sep-2017
+
+
+Item 11: Prefer deleted functions to private undefined ones
+
+
+SUMMARY
+* Prefer deleted functions to private undefined ones
+* Any functions mya be deleted, including non-member functions and template instantiations
