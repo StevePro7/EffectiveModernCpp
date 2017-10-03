@@ -1,0 +1,10 @@
+12 Item12
+03-Oct-2017
+
+
+Item 12: Declare overriding functions override
+
+
+SUMMARY
+* Declare overriding functions override
+* Member functions reference qualifiers make it possible to treat lvalue and rvalue objects (*this) differently

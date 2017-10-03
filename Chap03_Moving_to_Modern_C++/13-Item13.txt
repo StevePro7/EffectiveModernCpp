@@ -1,0 +1,10 @@
+13 Item13
+03-Oct-2017
+
+
+Item 13: Prefer const_iterators to iterators
+
+
+SUMMARY
+* Prefer const_iterators to iterators
+* In maximally generic code, prefer non-member versions of begin, end, rbegin, etc., over their member function counterparts
