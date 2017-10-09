@@ -1,0 +1,10 @@
+26 Item26
+09-Oct-2017
+
+
+Item 26: Avoid overloading on universal references
+
+
+SUMMARY
+* Overloading on universal references almost always sleads to the universal reference being called more frequently than expected
+* Perfect-forwarding constructors are especially problematic, because they're typically better matches thatn copy constructors for non-const lvalues, and they can hijack derived class calls to base class copy and move constructors
