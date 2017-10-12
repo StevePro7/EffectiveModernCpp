@@ -2,7 +2,7 @@
 09-Oct-2017
 
 
-Item 23: Use std::move on rvalue references, std::forwardd on universal references
+Item 25: Use std::move on rvalue references, std::forwardd on universal references
 
 
 SUMMARY

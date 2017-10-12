@@ -1,8 +1,12 @@
-27 Item27
-09-Oct-2017
+28 Item28
+12-Oct-2017
 
 
-Item 27: 
+Item 28: Understand reference collapsing
 
 
 SUMMARY
+* Reference collapsing occurs in four context: template instantiation, auto type generation, creation and use of typedefs and alias declarations, and decltype
+* When compilers generate a reference to a reference in a reference collapsing context, the result becomes a single reference.
+  If either of the original references is an lvalue reference, the result is an lvalue reference.  Otherwise it's an rvalue reference
+* Universal references are rvalue references in context where type deduction distinguishes lvalues from rvalues and where reference collapsing occurs

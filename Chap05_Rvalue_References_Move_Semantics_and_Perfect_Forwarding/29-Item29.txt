@@ -1,8 +1,10 @@
-27 Item27
-09-Oct-2017
+29 Item29
+12-Oct-2017
 
 
-Item 27: 
+Item 29: Assume that move operations are not present, not cheap, and not used
 
 
 SUMMARY
+* Assume that move operations are not present, not cheap, and not used
+* In code with known types or support for move semantics, there is no need for assumptions
