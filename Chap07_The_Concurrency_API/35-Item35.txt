@@ -1,0 +1,11 @@
+35 Item35
+26-Oct-2017
+
+
+Item 35: Prefer task-based programming to thread-based
+
+
+SUMMARY
+* The std::thread API offers no direct way to get return values from asynchronously run functions, and if those functions throw, the program is terminated
+* Thread-based programming calls for manual management of thread exhaustion, oversubscription, load balancing, and adaption to new platforms
+* Task-based programming via std::async with teh default launch policy handles most of these issues for you

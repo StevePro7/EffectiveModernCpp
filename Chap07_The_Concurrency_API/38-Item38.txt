@@ -1,0 +1,10 @@
+38 Item38
+26-Oct-2017
+
+
+Item 38: Be aware of varying thread handle destructor behavior
+
+
+SUMMARY
+* Future destructors normally just destroy the future's data members
+* The final future referring to a shared state for non-deferred task launched via std::async blocks until the task completes

@@ -1,0 +1,12 @@
+37 Item37
+26-Oct-2017
+
+
+Item 37: Make std::threads unjoinable on all paths
+
+
+SUMMARY
+* Make std::threads unjoinable on all paths
+* join-on-destruction can lead to difficult-to-debug performance anomalies
+* detach-on-destruction can lead-to-difficult-to-debug undefined behavior
+* Declare std::thread objects last in lists of data members

@@ -1,0 +1,11 @@
+39 Item39
+26-Oct-2017
+
+
+Item 39: Consider void futures for one-shot event communication
+
+
+SUMMARY
+* For simple event communication, condvar-based designs require a superfluous metuex, impose constraints on the relative progress of detecting and reacting tasks, and require reacting tasks to verify that the event has taken place
+* Designs employing a flag avoid those problems, but are based on polling, not blocking
+* A condvar and flag can be used together, but the resulting communications mechanism is somewhat stilted

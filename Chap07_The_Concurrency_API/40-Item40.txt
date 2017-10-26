@@ -1,0 +1,10 @@
+40 Item40
+26-Oct-2017
+
+
+Item 40: Use std::atomic for concurrency, volatile for special memory
+
+
+SUMMARY
+* std::atomic is for data access from multiple threads without using mutexes.  It's a tool for writing concurrent software
+* volatile is for memory where reads and writes should not be optimized away.  It's a tool for working with special memory
