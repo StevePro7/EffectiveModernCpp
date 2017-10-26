@@ -1,0 +1,9 @@
+33 Item33
+26-Oct-2017
+
+
+Item 33: Use declypte on auto&& parameters to std::forward them
+
+
+SUMMARY
+* Use decltype on auto&& parameters to std::forward them

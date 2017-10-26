@@ -1,0 +1,10 @@
+31 Item31
+26-Oct-2017
+
+
+Item 31: Avoid default capture modes
+
+
+SUMMARY
+* Default by-reference capture can lead to dangling references
+* Default by-value is susceptible to dangling pointers (especially this), and it misleading suggests that lambdas are self-contained

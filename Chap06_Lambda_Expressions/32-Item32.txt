@@ -1,0 +1,10 @@
+32 Item32
+26-Oct-2017
+
+
+Item 32: Use init capture to move objects into closures
+
+
+SUMMARY
+* Use C++ 14's init capture to move objects into closures
+* In C++ 11, emulate init capture via hand-written classes or std::bind
