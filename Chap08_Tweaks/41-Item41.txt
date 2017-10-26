@@ -1,0 +1,11 @@
+41 Item41
+26-Oct-2017
+
+
+Item 41: Consider pass by value for copyable parameters that are cheap to move are always copied
+
+
+SUMMARY
+* For copyable, cheap-to-move parameters that are always copied, pass by value may be nearly as efficient as pass by reference, it's easier to implement, and it can generate less object code
+* Copying parameters via construction may be significantly more expensive than copying them via assignment
+* Pass by value is subject to the slicing problem, so it's typically inappropriate for base class parameter types
