@@ -1,0 +1,26 @@
+Pg.34
+
+#include <boost/type_index.hpp>
+
+template<typename T>
+void f(const T& param)
+{
+	using std::cout;
+	using boost::typeindex::type_id_with_cvr;
+
+	// show T
+	cout << "T     = " << type_id_with_cvr<T>().pretty.name() << endl;
+
+	// show param
+	cout << "param = " << type_id_with_cvr<param>().pretty.name() << endl;
+
+
+	// OUTPUT
+	// gnu
+	// Widget const*
+	// Widget const* const&
+
+	// Microsoft
+	// class Widget const *
+	// class Widget const * const &
+}
