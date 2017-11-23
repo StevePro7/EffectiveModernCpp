@@ -1,0 +1,44 @@
+// Pg.15
+// Array Arguments
+
+#pragma once
+
+#include <cstddef>
+#include <array>
+
+// template with by-value parameter
+template<typename T>
+void f( T param )
+{
+}
+
+// template with by-reference parameter
+template<typename T>
+void f2( T& param )
+{
+}
+
+// return size of an array as a compile-time constant
+// the array parameter has no name because we care only
+// about the number of elements in contains
+template<typename T, std::size_t N>
+constexpr std::size_t arraySize( T(&)[N] ) noexcept
+{
+    return N;
+}
+
+int main()
+{
+    const char name[] = "J. P. Briggs";     // name type is const char[13]
+    const char* ptrToName = name;           // array decays to pointer
+
+    f( name );                      // name is array but T deduced as const char*
+
+    f2( name );                     // pass array to f so deduces as const char[13] &
+
+    int keyVals[] = { 1, 3, 7, 9, 11, 22, 35 };     // keyVals has 7 elements
+    int mappedValue[arraySize( keyVals )];          // so does mappedVals
+
+    std::array<int, arraySize( keyVals )> mapped2;  // mapped2 size is 7
+    return 0;
+}

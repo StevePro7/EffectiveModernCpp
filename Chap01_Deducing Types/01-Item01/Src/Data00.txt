@@ -1,0 +1,17 @@
+// Pg.10
+
+#pragma once
+
+template<typename T>
+//void f( ParametType param );
+void f( const T& param )           // ParamType is const T&
+{
+}
+
+int main()
+{
+    int x = 0;
+    f( x );           // call f with an int
+
+    return 0;
+}

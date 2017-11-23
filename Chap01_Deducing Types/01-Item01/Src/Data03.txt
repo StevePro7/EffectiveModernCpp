@@ -1,0 +1,24 @@
+// Pg.14
+// Case3 : ParamType is Neither a Pointer nor a Reference
+
+#pragma once
+
+// Case1 : ParamType is a Reference or Pointer but not a Universal Reference
+template<typename T>
+void f( T param )                   // param is now passed by value
+{
+}
+
+int main()
+{
+    // Case 3
+    int x = 27;         // x    lvalue      int         is an int
+    const int cx = x;   // cx   lvalue      const int   is a const int
+    const int& rx = x;  // rx   lvalue      const int&  is a reference to x as a const int
+
+    f( x );             // T    int         param type  int
+    f( cx );            // T    int         param type  int
+    f( rx );            // T    int         param type  int
+
+    return 0;
+}
