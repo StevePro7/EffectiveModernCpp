@@ -11,8 +11,9 @@ class TD;
 template<typename T>
 void f( const T& param )
 {
-    std::cout << "T     = " << typeid(T).name() << std::endl;           // class Widget const *
-    std::cout << "param = " << typeid(param).name() << std::endl;       // class Widget const *
+                                                                        // Microsoft                // gcc
+    std::cout << "T     = " << typeid(T).name() << std::endl;           // class Widget const *     // PK6Widget
+    std::cout << "param = " << typeid(param).name() << std::endl;       // class Widget const *     // PK6Widget
 
     // https://stackoverflow.com/questions/25952769/left-of-must-have-class-struct-union-c-error
     int a = param->getData();
