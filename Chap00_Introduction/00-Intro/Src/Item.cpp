@@ -59,8 +59,5 @@ int main()
     // In this call to someFunc, w i s a copy of wid that's created via move construction
     someFunc( std::move( wid ) );
 
-
-    
-
     return 0;
 }
