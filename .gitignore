@@ -1,0 +1,6 @@
+*.ncb
+*.suo
+*.vcxproj.*.user
+*.vs*
+*Debug*
+*stevepro*
