@@ -46,13 +46,13 @@ void f2( std::initializer_list<T> initList )
 
 int main()
 {
-    auto x = 27;            // case 3   x neither ptr nor ref
-    const auto cx = x;      // case 3   cx isn't either
-    const auto& rx = x;     // case 1   rx is non-universal ref
+    auto x = 27;            // case 3   x neither ptr nor ref       int
+    const auto cx = x;      // case 3   cx isn't either             const int
+    const auto& rx = x;     // case 1   rx is non-universal ref     const int&
 
-    func_for_x( 27 );       // conceptual call      param deduced type is x type
-    func_for_cx( x );       // conceptual call      param deduced type is cx type
-    func_for_rx( x );       // conceptual call      param deduced type is rx type
+    func_for_x( 27 );       // conceptual call      param deduced type is x type    int
+    func_for_cx( x );       // conceptual call      param deduced type is cx type   const int
+    func_for_rx( x );       // conceptual call      param deduced type is rx type   const int&
 
     // Case 2   Type is universal reference         works as expected
     auto&& uref1 = x;       // x int        lvalue  uref1 type  int&
