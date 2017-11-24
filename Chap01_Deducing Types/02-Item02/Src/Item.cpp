@@ -1,6 +1,7 @@
 #pragma once
 
 #include <initializer_list>
+#include <vector>
 
 // conceptual template for deducing x type
 template<typename T>
@@ -36,6 +37,12 @@ template<typename T>
 void f2( std::initializer_list<T> initList )
 {
 }
+
+// error: can't deduce type for { 1, 2, 3 }
+//auto createList()
+//{
+//    return { 1, 2, 3 };
+//}
 
 int main()
 {
@@ -78,5 +85,10 @@ int main()
     //f1( { 11, 13, 9 } );                  // error! can't deduce type for T
     f2( { 11, 13, 9 } );                    // T deduced as int
                                             // initList type    std::initializer_list<int>
+
+    std::vector<int> v;
+    auto resetV = [&v]( const auto& newValue ) { v = newValue; };           // C++14
+    //resetV( { 1, 2, 3 } );                // error!   cannot deduce type for { 1, 2, 3 }
+
     return 0;
 }
