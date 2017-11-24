@@ -61,6 +61,28 @@ decltype(auto) authAndAccess3( Container& c, Index i )
     return c[i];
 }
 
+// Factory function
+std::deque<std::string> makeStringDeque()
+{
+    std::deque<std::string> queue;
+    return queue;
+}
+
+// c is now a universal reference
+template<typename Container, typename Index>
+decltype(auto) authAndAccess4( Container&& c, Index i )
+{
+    authenticateUser();
+    return std::forward<Container>( c )[i];
+}
+// C++11 version
+template<typename Container, typename Index>
+auto authAndAccess5( Container&& c, Index i ) -> decltype(std::forward<Container>( c )[i])
+{
+    authenticateUser();
+    return std::forward<Container>( c )[i];
+}
+
 int main()
 {
     myVector<int> v;                // decltype(v)      vector<int>
@@ -70,12 +92,18 @@ int main()
 
     // authenticateUser             return d[5] then assign 10 to it
     std::deque<int> d;
-    //authAndAccess2( d, 5 );       // seems to compile OK but runtime error    subscript out of range
+    //authAndAccess2( d, 5 ) = 10;    // authenticate user    return d[5] then assign 10  won't compile!
 
     Widget w;                       // Widget
     const Widget& cw = w;           // const Widget &
-    auto myWidget1 = cw;            // auto type deduction  Widget
-    decltype(auto) myWidget2 = cw;
+    auto myWidget1 = cw;            // auto type deduction      Widget
+    decltype(auto) myWidget2 = cw;  // decltype type deduction  const Widget &
+
+    std::deque<std::string> queue = makeStringDeque();
+    // make copy of 5th element of deque returned from makeStringDeque
+    //auto s = authAndAccess3( makeStringDeque(), 5 );                    //    subscript out of range
+    //auto s = authAndAccess4( makeStringDeque(), 5 );                    //    subscript out of range
+    // could not understand how to call the version 4 without runtime error!
 
     return 0;
 }
