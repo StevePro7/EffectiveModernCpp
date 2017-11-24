@@ -1,5 +1,7 @@
 #pragma once
 
+#include <initializer_list>
+
 // conceptual template for deducing x type
 template<typename T>
 void func_for_x( T param )                  // int
@@ -18,6 +20,12 @@ void func_for_rx( const T& param )          // const int &
 {
 }
 
+// someFunc is a function
+// type void(int, double)
+void someFunc( int, double )
+{
+}
+
 int main()
 {
     auto x = 27;            // case 3   x neither ptr nor ref
@@ -29,9 +37,27 @@ int main()
     func_for_rx( x );       // conceptual call      param deduced type is rx type
 
     // Case 2   Type is universal reference         works as expected
-    auto&& uref1 = x;       // x int        lvalue  uref1 type is int&
-    auto&& uref2 = cx;      // cx const int lvalue  uref2 type is const int&
-    auto&& uref3 = 27;      // 27           rvalue  uref3 type is int&&
+    auto&& uref1 = x;       // x int        lvalue  uref1 type  int&
+    auto&& uref2 = cx;      // cx const int lvalue  uref2 type  const int&
+    auto&& uref3 = 27;      // 27           rvalue  uref3 type  int&&
+
+    const char name[] = "R. N. Briggs";     // name type    const char[13]
+    auto arr1 = name;                       // arr1 type    const char*
+    auto& arr2 = name;                      // arr2 type    const char[13](&)
+
+    auto func1 = someFunc;                  // func1 type   void(*)(int, double)
+    auto& func2 = someFunc;                 // func2 type   void(&)(int, double)
+
+    int x1 = 27;        // C++98
+    int x2( x1 );       // C++98
+    int x3 = { 27 };    // C++11
+    int x4{ 27 };       // C++11
+
+    // all compile
+    auto y1 = 27;       // C++98            int                             value = 27
+    auto y2( y1 );      // C++98            int                             value = 27
+    auto y3 = { 27 };   // C++11            std::initializer_list<int>      value = { 27 }
+    auto y4{ y3 };      // C++11            std::initializer_list<int>      value = { 27 }
 
     return 0;
 }
