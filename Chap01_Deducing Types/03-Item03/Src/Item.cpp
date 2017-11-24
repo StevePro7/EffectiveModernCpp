@@ -2,6 +2,7 @@
 
 #include <cstddef>
 #include <deque>
+#include <string>
 
 class Widget {};
 
