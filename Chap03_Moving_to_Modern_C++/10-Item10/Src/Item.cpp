@@ -81,6 +81,7 @@ int main()
     // Example where unscoped enum may be better than scoped : tuple
     using UserInfo = std::tuple<std::string, std::string, std::size_t>;
 
+    // Could not get this code working in Xcode
     //UserInfo uInfo;
     //auto val = std::get<1>( uInfo );
 
