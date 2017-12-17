@@ -53,7 +53,7 @@ int main()
 
     std::atomic<int> ai1{ 0 };      // fine
     std::atomic<int> ai2( 0 );      // fine
-    std::atomic<int> ai3 = 0;       // error!       NOTE: did not get error in VS2017
+    //std::atomic<int> ai3 = 0;       // error!       NOTE: did not get error in VS2017
 
     double x = 0, y = 0, z = 0;
     //int sum1{ x + y + z };          // error! sum of doubles may not be expressible as int
