@@ -11,7 +11,7 @@ void dwim( IT b, IT e )
     while( b != e )
     {
         //typename std::iterator_tratis<IT>::value_type currValue = *b;
-        auto currValue = = *b;
+        auto currValue = *b;
     }
 }
 
@@ -19,7 +19,7 @@ void dwim( IT b, IT e )
 class Widget
 {
 public:
-    Widget Widget::operator<( Widget &other ) 
+    Widget operator<( Widget &other ) 
     {
         return data < other.data ? *this : other;
     }
