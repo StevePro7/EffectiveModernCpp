@@ -58,7 +58,6 @@ int main()
     //}
 
     std::mutex f1m, f2m, f3m;
-    
     {
         // pass 0 as null ptr to f1
         MuxGuard g( f1m );
