@@ -9,7 +9,7 @@ std::vector<std::size_t> primeFactors( std::size_t x )
     return std::vector<std::size_t>();
 }
 
-enum ColorX;                                    // error! Note compiles on VS2017
+//enum ColorX;                                    // error! Note compiles on VS2017
 enum class ColorY;
 
 //enum Status
@@ -85,15 +85,15 @@ int main()
     //auto val = std::get<1>( uInfo );
 
     // Unscoped enum
-    enum UserInfoFields1 { uiName, uiEmail, uiReputation };
-    UserInfo uInfo1;
-    auto val1 = std::get<uiEmail>( uInfo1 );
+    //enum UserInfoFields1 { uiName, uiEmail, uiReputation };
+    //UserInfo uInfo1;
+    //auto val1 = std::get<uiEmail>( uInfo1 );
 
     // Scoped enum
-    enum class UserInfoFields2 { uiName, uiEmail, uiReputation };
-    UserInfo uInfo2;
+    //enum class UserInfoFields2 { uiName, uiEmail, uiReputation };
+    //UserInfo uInfo2;
     //auto val2 = std::get<uiEmail>( uInfo2 );
-    auto val2 = std::get<static_cast<std::size_t>(UserInfoFields2::uiEmail)>( uInfo2 );
+    //auto val2 = std::get<static_cast<std::size_t>(UserInfoFields2::uiEmail)>( uInfo2 );
 
     return 0;
 }
