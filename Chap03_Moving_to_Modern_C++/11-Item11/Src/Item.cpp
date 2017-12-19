@@ -12,6 +12,5 @@ int main()
     //bool b2 = c.isLucky( true );      // error! call to deleted function
     //bool b3 = c.isLucky( 3.5          // error! call to deleted function
 
-    Widget w;
     return 0;
 }
