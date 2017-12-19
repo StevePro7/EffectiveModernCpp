@@ -7,10 +7,25 @@ public:
     void processPointer( T* ptr )
     {
     }
-
-private:
-    template<>
-    void processPointer<void>( void* )
-    {
-    }
 };
+
+
+template<>
+void Widget::processPointer<void>( void* )
+{
+}
+
+template<>
+void Widget::processPointer<char>( char* )
+{
+}
+
+template<>
+void Widget::processPointer<const void>( const void* )
+{
+}
+
+template<>
+void Widget::processPointer<const char>( const char* )
+{
+}

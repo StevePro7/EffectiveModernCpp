@@ -25,6 +25,9 @@
 /* Begin PBXFileReference section */
 		804611B81FC7007A00571F28 /* Item */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Item; sourceTree = BUILT_PRODUCTS_DIR; };
 		808160D71FC70430009F28BC /* Item.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Item.cpp; path = ../Src/Item.cpp; sourceTree = SOURCE_ROOT; };
+		80B7B0531FE971B6008C2557 /* Data00.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Data00.h; path = ../Src/Data00.h; sourceTree = SOURCE_ROOT; };
+		80B7B0541FE9727C008C2557 /* Data01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Data01.h; path = ../Src/Data01.h; sourceTree = "<group>"; };
+		80B7B0551FE97A21008C2557 /* Data02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Data02.h; path = ../Src/Data02.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,9 @@
 		804611BA1FC7007A00571F28 /* Item */ = {
 			isa = PBXGroup;
 			children = (
+				80B7B0531FE971B6008C2557 /* Data00.h */,
+				80B7B0541FE9727C008C2557 /* Data01.h */,
+				80B7B0551FE97A21008C2557 /* Data02.h */,
 				808160D71FC70430009F28BC /* Item.cpp */,
 			);
 			path = Item;
