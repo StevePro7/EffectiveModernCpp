@@ -1,58 +1,37 @@
 #pragma once
 
-#include <iostream>
-#include <vector>
+void f1( int x ) throw() {}              // no exceptions from f: C++98 style
+void f2( int x ) noexcept {}             // no exceptions from f: C++11 style
 
-// declaration only for TD  "Type Displayer"
-template<typename T>
-class TD;
+void func1( int params ) noexcept {}     // most optimizable
+void func2( int params ) throw() {}      // less optimizable
+void func3( int params ) {}              // less optimizable
 
-
-template<typename T>
-void f( const T& param )
+template<class T, size_t N>
+void swap( T( &a )[N], T( &b )[N] ) noexcept(noexcept(swap( *a, *b )))
 {
-                                                                        // Microsoft                // gcc
-    std::cout << "T     = " << typeid(T).name() << std::endl;           // class Widget const *     // PK6Widget
-    std::cout << "param = " << typeid(param).name() << std::endl;       // class Widget const *     // PK6Widget
-
-    // https://stackoverflow.com/questions/25952769/left-of-must-have-class-struct-union-c-error
-    int a = param->getData();
-    int b = (*param).getData();
 }
 
-class Widget
+template<class T1, class T2>
+struct patr
 {
-public:
-    // https://stackoverflow.com/questions/20319540/error-c2662-cannot-convert-from-const-to-reference
-    int getData() const { return 7; }
+    void swap( patr& p ) noexcept(noexcept(swap( first, p.first )) && noexcept(swap( second, p.second ) ) )
+    {
+    }
 };
 
-// factory function
-std::vector<Widget> createVec()
+// functions defined elsewhere
+void setup() {}
+void cleanup() {}
+
+void doWork() noexcept
 {
-    return std::vector<Widget>( 1 );
+    setup();    // set up work to be done
+                // do the actual work
+    cleanup();  // preform clean up actions
 }
 
 int main()
 {
-    const int theAnswer = 42;
-
-    auto x = theAnswer;         // int
-    auto y = &theAnswer;        // const int*
-
-    // error C2079: 'xType' uses undefined class 'TD<int>'
-    //TD<decltype(x)> xType;      // elicit errors containing 
-    //TD<decltype(x)> yType;      // x and y incomplete types
-
-    std::cout << typeid(x).name() << std::endl;     // int
-    std::cout << typeid(y).name() << std::endl;     // int const*
-
-    // init vw with factory return
-    const auto vw = createVec();
-    if( !vw.empty() )
-    {
-        f( &vw[0] );
-    }
-
     return 0;
 }
