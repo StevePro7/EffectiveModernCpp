@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stddef.h>                      // size_t
+
 void f1( int x ) throw() {}              // no exceptions from f: C++98 style
 void f2( int x ) noexcept {}             // no exceptions from f: C++11 style
 
@@ -18,6 +20,9 @@ struct patr
     void swap( patr& p ) noexcept(noexcept(swap( first, p.first )) && noexcept(swap( second, p.second ) ) )
     {
     }
+
+    int first;
+    int second;
 };
 
 // functions defined elsewhere
