@@ -1,58 +1,43 @@
 #pragma once
 
-#include <iostream>
 #include <vector>
 
-// declaration only for TD  "Type Displayer"
-template<typename T>
-class TD;
+typedef std::vector<int>::iterator IterT;
+typedef std::vector<int>::const_iterator ConstIterT;
 
-
-template<typename T>
-void f( const T& param )
+// In container, find first occurrence of targetVal, then insert insertVal there
+template<typename C, typename V>
+void findAndInsert( C& container, const V& targetVal, const V& insertVal )
 {
-                                                                        // Microsoft                // gcc
-    std::cout << "T     = " << typeid(T).name() << std::endl;           // class Widget const *     // PK6Widget
-    std::cout << "param = " << typeid(param).name() << std::endl;       // class Widget const *     // PK6Widget
+    using std::cbegin;
+    using std::cend;
 
-    // https://stackoverflow.com/questions/25952769/left-of-must-have-class-struct-union-c-error
-    int a = param->getData();
-    int b = (*param).getData();
+    // non-member cbegin and cend
+    auto it = std::find( cbegin( container ), cend( container ), targetVal );
+    container.insert( it, insertVal );
 }
 
-class Widget
-{
-public:
-    // https://stackoverflow.com/questions/20319540/error-c2662-cannot-convert-from-const-to-reference
-    int getData() const { return 7; }
-};
-
-// factory function
-std::vector<Widget> createVec()
-{
-    return std::vector<Widget>( 1 );
-}
+// C++11 equivalent
+//template<class C>
+//auto cbegin( const C& container )->decltype(std::begin( container ))
+//{
+//    return std::begin( container );
+//}
 
 int main()
 {
-    const int theAnswer = 42;
+    std::vector<int> values;
 
-    auto x = theAnswer;         // int
-    auto y = &theAnswer;        // const int*
+    std::vector<int>::iterator it = std::find( values.begin(), values.end(), 1983 );
+    values.insert( it, 1998);
 
-    // error C2079: 'xType' uses undefined class 'TD<int>'
-    //TD<decltype(x)> xType;      // elicit errors containing 
-    //TD<decltype(x)> yType;      // x and y incomplete types
+    // Not compile  no suitable user-defined conversion from ConstIterT to IterT exists
+    //ConstIterT ci = std::find( static_cast<ConstIterT>(values.begin()), static_cast<ConstIterT>(values.end()), 1983 );
+    //values.insert( static_cast<IterT>(ci), 1998 );
 
-    std::cout << typeid(x).name() << std::endl;     // int
-    std::cout << typeid(y).name() << std::endl;     // int const*
-
-    // init vw with factory return
-    const auto vw = createVec();
-    if( !vw.empty() )
-    {
-        f( &vw[0] );
-    }
+    // Code that uses const_iterator that is practical
+    auto ci = std::find( values.cbegin(), values.cend(), 1983 );
+    values.insert( ci, 1998 );
 
     return 0;
 }
