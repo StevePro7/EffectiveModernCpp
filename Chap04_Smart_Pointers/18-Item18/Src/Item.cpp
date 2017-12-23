@@ -89,6 +89,7 @@ auto makeInvestment14( Ts&&... params )
 }
 
 
+/*
 // custom deleter as stateless lambda
 auto delInvmt1 = []( Investment* pInvestment )
 {
@@ -119,6 +120,7 @@ makeInvestment2( Ts&&... params )
 {
     return nullptr;
 }
+*/
 
 int main()
 {
