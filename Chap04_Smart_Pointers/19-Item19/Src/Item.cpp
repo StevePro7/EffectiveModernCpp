@@ -65,5 +65,6 @@ int main()
     std::shared_ptr<Widget> tpw2( tpw1 );                       // tpw2 uses same control block as tpw1
     std::vector<std::shared_ptr<Widget>> processedWidgets;
 
+    // return
     return 0;
 }
