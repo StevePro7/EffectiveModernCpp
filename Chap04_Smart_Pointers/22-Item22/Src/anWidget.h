@@ -22,11 +22,21 @@ public:
     Widget();
     ~Widget();
 
+    // right idea, wrong code
+    //Widget( Widget&& rhs ) = default;
+    //Widget& operator=( Widget&& rhs ) = default;
+
+    // declarations only
+    Widget( const Widget& rhs );            // copy constructor
+    Widget& operator=( const Widget& rhs );       // copy assignment operator
+
+    Widget( Widget&& rhs );                 // move constructor
+    Widget& operator=( Widget&& rhs );      // move assignment operator
+
 private:
     // C++98 declare implementation struct and pointer to it
     //struct Impl;
     //Impl* pImpl;
-
 
     // C++11 use smart pointer instead of raw pointer
     struct Impl;
