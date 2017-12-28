@@ -19,7 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Src\anGadget.cpp" />
+    <ClCompile Include="..\Src\anWidget.cpp" />
     <ClCompile Include="..\Src\Item.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Src\anGadget.h" />
+    <ClInclude Include="..\Src\anWidget.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
