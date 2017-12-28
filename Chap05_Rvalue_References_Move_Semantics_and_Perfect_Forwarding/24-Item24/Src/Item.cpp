@@ -54,6 +54,14 @@ void someFunc( MyTemplateType&& param )
 {
 }
 
+// C++14
+//auto timeFuncInvocation = []( auto&& func, auto&&... params )
+//{
+//    // start timer;
+//    std::forward( <decltype(func)>(func)(std::forward<decltype(params)>( params )...);
+//    // stop timer;
+//}
+
 int main()
 {
     // r-value reference
