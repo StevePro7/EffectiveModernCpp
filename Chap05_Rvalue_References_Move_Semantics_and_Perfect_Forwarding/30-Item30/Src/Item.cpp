@@ -1,5 +1,6 @@
 #pragma once
 
+<<<<<<< HEAD
 #include <cstddef>
 #include <vector>
 #include "Data00.h"
@@ -58,6 +59,9 @@ using ProcessFuncType = int( *)(int);
 void f3( std::size_t sz )
 {
 }
+=======
+// comment
+>>>>>>> refs/remotes/origin/master
 
 int main()
 {
