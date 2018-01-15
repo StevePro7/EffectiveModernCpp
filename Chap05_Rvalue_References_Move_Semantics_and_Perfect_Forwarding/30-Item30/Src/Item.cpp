@@ -1,6 +1,5 @@
 #pragma once
 
-<<<<<<< HEAD
 #include <cstddef>
 #include <vector>
 #include "Data00.h"
@@ -59,18 +58,15 @@ using ProcessFuncType = int( *)(int);
 void f3( std::size_t sz )
 {
 }
-=======
-// comment
->>>>>>> refs/remotes/origin/master
 
 int main()
 {
     //f( expression );          // if this does one thing
     //fwd( expression );        // but this does something else
-                                // fwd failed to perfectly forward expression to f
+    // fwd failed to perfectly forward expression to f
 
     f( { 1, 2, 3 } );           // fine "{ 1, 2, 3 } implicitly converted to std::vector<int>
-    //fwd( { 1, 2, 3 } );       // error! doesn't compile
+                                //fwd( { 1, 2, 3 } );       // error! doesn't compile
 
     auto il = { 1, 2, 3 };      // il type deduced to be std::initializer_list<int>
     fwd( il );                  // fine perfect forward il to f
@@ -84,10 +80,10 @@ int main()
 
 
     f( processVal );                                // fine
-    //fwd( processVal );                            // error! which processVal
+                                                    //fwd( processVal );                            // error! which processVal
 
 
-    //fwd( workOnVal );                             // error which workOnVal instantiation?
+                                                    //fwd( workOnVal );                             // error which workOnVal instantiation?
 
     ProcessFuncType processValPtr = processVal;     // specify needed signature for processVal
     fwd( processValPtr );                           // fine
@@ -97,9 +93,9 @@ int main()
     IPv4Header h;
     h.totalLength = 16;
     f3( h.totalLength );                            // fine
-    //fwd( h.totalLength );                         // error!
+                                                    //fwd( h.totalLength );                         // error!
 
-    // copy bitfield value
+                                                    // copy bitfield value
     auto length = static_cast<std::uint16_t>(h.totalLength);
 
     return 0;
