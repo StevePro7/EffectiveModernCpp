@@ -24,7 +24,7 @@ private:
 class Person01
 {
 public:
-    template<typename T, typename = typename std::enable_if<age==18>::type>
+    template<typename T, typename = typename std::enable_if<true>::type>
     explicit Person01( T&& n )
     {
     }
