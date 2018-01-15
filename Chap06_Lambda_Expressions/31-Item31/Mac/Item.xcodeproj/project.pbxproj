@@ -25,6 +25,12 @@
 /* Begin PBXFileReference section */
 		804611B81FC7007A00571F28 /* Item */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Item; sourceTree = BUILT_PRODUCTS_DIR; };
 		808160D71FC70430009F28BC /* Item.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Item.cpp; path = ../Src/Item.cpp; sourceTree = SOURCE_ROOT; };
+		80BA5E89200D569E00F3396B /* Data01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Data01.h; path = ../Src/Data01.h; sourceTree = "<group>"; };
+		80BA5E8A200D569E00F3396B /* Data05.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Data05.h; path = ../Src/Data05.h; sourceTree = "<group>"; };
+		80BA5E8B200D569E00F3396B /* Data02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Data02.h; path = ../Src/Data02.h; sourceTree = "<group>"; };
+		80BA5E8C200D569E00F3396B /* Data03.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Data03.h; path = ../Src/Data03.h; sourceTree = "<group>"; };
+		80BA5E8D200D569E00F3396B /* Data00.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Data00.h; path = ../Src/Data00.h; sourceTree = "<group>"; };
+		80BA5E8E200D569E00F3396B /* Data04.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Data04.h; path = ../Src/Data04.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,12 @@
 		804611BA1FC7007A00571F28 /* Item */ = {
 			isa = PBXGroup;
 			children = (
+				80BA5E8D200D569E00F3396B /* Data00.h */,
+				80BA5E89200D569E00F3396B /* Data01.h */,
+				80BA5E8B200D569E00F3396B /* Data02.h */,
+				80BA5E8C200D569E00F3396B /* Data03.h */,
+				80BA5E8E200D569E00F3396B /* Data04.h */,
+				80BA5E8A200D569E00F3396B /* Data05.h */,
 				808160D71FC70430009F28BC /* Item.cpp */,
 			);
 			path = Item;
