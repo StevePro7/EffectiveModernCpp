@@ -23,6 +23,6 @@ void addDivisorFilter()
     // refers to the above static
     filters.emplace_back( [=]( int value ) { return value % divisor == 0; } );
 
-    // modfiy divisor
+    // modify divisor
     ++divisor;
 }
