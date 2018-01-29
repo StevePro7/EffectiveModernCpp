@@ -46,12 +46,12 @@ int main()
 
     auto f = []( auto&& param )
     {
-        return func( normalize( std::forward<decltype(param)>( param ) ) );
+        //return func( normalize( std::forward<decltype(param)>( param ) ) );
     };
 
     auto f2 = []( auto&&... params )
     {
-        return func( normalize( std::forward<decltype(params)>( params )... ) );
+        //return func( normalize( std::forward<decltype(params)>( params )... ) );
     };
 
     return 0;
