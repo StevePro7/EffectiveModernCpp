@@ -13,13 +13,20 @@ using Duration = std::chrono::steady_clock::duration;
 
 enum class Sound { Beep, Siren, Whistle };
 enum class Volume { Normal, Loud, LoadPlusPlus };
-enum class CompLevel{ Low, Normal, High };
+enum class CompLevel{ Low, Normal, High };              // compression level
 
 class Widget {};
 
 // at time t, make sound s, for duration d
 void setAlarm( Time t, Sound s, Duration d )
 {
+}
+
+// make compressed copy of w
+Widget compress( const Widget& w, CompLevel lev )
+{
+    Widget w2;
+    return w2;
 }
 
 int main()
@@ -94,6 +101,25 @@ int main()
         return lowVal <= val && val <= highVal;
     };
 
+
+    Widget w;
+
+    // std::bind always copies arguments but callers can achive the 
+    // effect of having an argument stored by reference std::ref()
+    auto compressRateB = std::bind( compress, w, _1 );
+    auto compressRateB2 = std::bind( compress, std::ref( w ), _1 );
+
+    // w is capture by value; lev is passed by value
+    auto compressRateL = [w]( CompLevel lev )
+    {
+        return compress( w, lev );
+    };
+
+    // argument is passed by value
+    compressRateL( CompLevel::High );
+
+    // how is argument passed?
+    compressRateB( CompLevel::High );
 
     return 0;
 }
