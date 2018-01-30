@@ -2,6 +2,7 @@
 
 #include <chrono>
 #include <functional>
+#include "Data00.h"
 
 using namespace std::chrono;
 using namespace std::literals;
@@ -14,8 +15,6 @@ using Duration = std::chrono::steady_clock::duration;
 enum class Sound { Beep, Siren, Whistle };
 enum class Volume { Normal, Loud, LoadPlusPlus };
 enum class CompLevel{ Low, Normal, High };              // compression level
-
-class Widget {};
 
 // at time t, make sound s, for duration d
 void setAlarm( Time t, Sound s, Duration d )
@@ -120,6 +119,25 @@ int main()
 
     // how is argument passed?
     compressRateB( CompLevel::High );
+
+
+    PolyWidget pw;
+    auto boundPW = std::bind( pw, _1 );
+
+    // pass int to PolyWidget::operator()
+    boundPW( 1936 );
+
+    // pass nullptr to PolyWidget::operator()
+    boundPW( nullptr );
+
+    //pass string literal to PolyWidget::operator()
+    boundPW( "stevepro" );
+
+    // C++14
+    auto boundPW2 = [pw]( const auto& param )
+    {
+        pw( param );
+    };
 
     return 0;
 }
