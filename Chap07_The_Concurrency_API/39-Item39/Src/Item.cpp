@@ -32,7 +32,7 @@ int main()
     // detect event
     flag = true;                // tell reacting task
 
-    // prepare to react
+                                // prepare to react
     while( !flag )
     {
         // wait for event
@@ -55,15 +55,17 @@ int main()
     // tell reacting task       (part 2)
     cv.notify_one();
 
+
     // Another example however using lambdas which didn't seem to compile...
-    std::condition_variable cv;
-    std::mutex m;
-    bool flag( false );
+    std::condition_variable cv2;
+    std::mutex m2;
+    bool flag3( false );
     {
         // lock mutex
-        std::unique_lock<std::mutex> lk( m );
+        std::unique_lock<std::mutex> lk( m2 );
 
-        cv.wait( lk, [] { return flag; } );
+        // 'flag3' cannot be implicitly captured because no default capture mode has been specified
+        cv2.wait( lk, [flag3] { return flag3; } );
 
         // react to event       // (m is locked)
     }
