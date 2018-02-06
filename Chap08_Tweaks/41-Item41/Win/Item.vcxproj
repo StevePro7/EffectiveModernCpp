@@ -21,6 +21,12 @@
   <ItemGroup>
     <ClCompile Include="..\Src\Item.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Src\Data00.h" />
+    <ClInclude Include="..\Src\Data01.h" />
+    <ClInclude Include="..\Src\Data02.h" />
+    <ClInclude Include="..\Src\Data03.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{78A61656-A4A1-4380-AF50-42A854AEEB89}</ProjectGuid>
