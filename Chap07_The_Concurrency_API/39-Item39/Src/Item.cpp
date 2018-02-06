@@ -2,6 +2,81 @@
 
 #include <atomic>
 #include <condition_variable>
+#include <future>
+#include <vector>
+#include "Data00.h"
+
+void react()
+{
+}
+
+void detect()
+{
+    std::promise<void> p;
+
+    // Insert [&] otherwise receiving error:
+    // 'p' cannot be implicitly captured because no default capture mode has been specified
+    std::thread t( [&]
+    {
+        p.get_future().wait();
+        react();
+    } );
+
+    p.set_value();
+    t.join();
+}
+
+// leverage ThreadRAII from previous Item
+void detect2()
+{
+    std::promise<void> p;
+
+    // Insert [&] otherwise receiving error:
+    // 'p' cannot be implicitly captured because no default capture mode has been specified
+    ThreadRAII tr(
+        std::thread( [&]
+        {
+            p.get_future().wait();
+            react();
+        } ),
+        ThreadRAII::DtorAction::join
+    );
+
+    p.set_value();
+}
+
+// now for multiple reacting tasks
+void detect3()
+{
+    std::promise<void> p;
+
+    // sf type is std::shared_future<void>
+    auto sf = p.get_future().share();
+
+    // container for reacting threads
+    std::vector<std::thread> vt;
+
+    const int threadsToRun = 3;
+    for( int i = 0; i < threadsToRun; ++i )
+    {
+        // wait on local copy of sf
+        // see Item 42 for info on emplace_back
+        vt.emplace_back( [sf] { sf.wait(); react(); } );
+    }
+
+    // detect hangs if this "..." then code throws!
+
+    // un-suspend all threads
+    p.set_value();
+
+    // make all threads un-joinable;
+    // see item 2 for info on "auto&"
+    for( auto& t : vt )
+    {
+        t.join();
+    }
+}
+
 
 int main()
 {
@@ -71,5 +146,13 @@ int main()
     }
     // continue reacting        // (m now unlocked)
  
+
+    // promise for communications channel
+    std::promise<void> p;
+    p.set_value();              // tell reacting task
+    p.get_future().wait();      // wait on future corresponding to p
+    // react to event
+
+    
     return 0;
 }
