@@ -47,7 +47,7 @@ int main()
     x2 = 10;                            // write x (can't be optimized away)
     x2 = 20;                            // write x again
 
-    std::atomic<int> x3 = 0;
+    //std::atomic<int> x3 = 0;
     //auto y3 = x3;                     // conceptually read x
     // NOT in book but this produces the following error in Visual Studio 2017
     // 'std::atomic<int>::atomic(const std::atomic<int> &)': function was explicitly deleted
