@@ -1,6 +1,5 @@
 *.ncb
 *.suo
-*.vcxproj.*.user
+*.vcxproj*.user
 *.vs*
 *Debug*
-*stevepro*

@@ -4,10 +4,10 @@
 ###### INTRO
 Contains all notes + source code compiled from Effective Modern C++
 <br />
-First Edition by Scott Meyers in 2015 [http://bit.ly/2y7LcWu]
+First Edition by Scott Meyers in 2015 [https://moodle.ufsc.br/pluginfile.php/2377667/mod_resource/content/0/Effective_Modern_C__.pdf]
 
 ###### TOOLS
-- C/C++ 11 + 14
+- C/C++ 11 & 14
 - Visual Studio 2017
 
 ###### SOURCE CODE
