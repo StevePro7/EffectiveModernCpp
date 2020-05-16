@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1589653866 source:/home/stevepro/Steven/Temp/00-Intro/Lin/main.cpp
+	<iostream>
+
+1589651545 source:/home/stevepro/Steven/Temp/00-Intro/Src/Item.cpp
+	<utility>
+
