@@ -1,7 +1,7 @@
 # Effective Modern C++
 42 Specific Ways to Improve Your Programs and Designs 
 
-###### INTRO!!
+###### INTRO
 Contains all notes + source code compiled from [Effective Modern C++](https://moodle.ufsc.br/pluginfile.php/2377667/mod_resource/content/0/Effective_Modern_C__.pdf)
 <br />
 First Edition Effective Modern C++ by Scott Meyers published in 2015
