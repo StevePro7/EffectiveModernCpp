@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1589651894 source:/home/stevepro/Steven/Temp/06-Item06/Lin/main.cpp
+	<iostream>
+
+1589651545 source:/home/stevepro/Steven/Temp/06-Item06/Src/Item.cpp
+	<array>
+	<vector>
+
