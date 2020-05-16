@@ -2,13 +2,15 @@
 42 Specific Ways to Improve Your Programs and Designs 
 
 ###### INTRO
-Contains all notes + source code compiled from Effective Modern C++
+Contains all notes + source code compiled from [Effective Modern C++](https://moodle.ufsc.br/pluginfile.php/2377667/mod_resource/content/0/Effective_Modern_C__.pdf)
 <br />
-First Edition by Scott Meyers in 2015 [https://moodle.ufsc.br/pluginfile.php/2377667/mod_resource/content/0/Effective_Modern_C__.pdf]
+First Edition Effective Modern C++ by Scott Meyers published in 2015
 
 ###### TOOLS
 - C/C++ 11 & 14
+- Code::Blocks 16.01
 - Visual Studio 2017
+- Xcode 11.2.1
 
 ###### SOURCE CODE
 https://github.com/SteveProXNA/EffectiveModernCpp
