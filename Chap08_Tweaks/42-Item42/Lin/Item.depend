@@ -11,3 +11,10 @@
 	<iostream>
 	<memory>
 
+1589658985 source:/home/stevepro/Github/StevePro7/EffectiveModernCpp/Chap08_Tweaks/42-Item42/Src/Item.cpp
+	<list>
+	<memory>
+	<regex>
+	<string>
+	<vector>
+
