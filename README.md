@@ -6,7 +6,7 @@ Contains all notes + source code compiled from [Effective Modern C++](https://mo
 <br />
 First Edition Effective Modern C++ by Scott Meyers published in 2015
 
-###### TOOLSx
+###### TOOLS
 - C/C++ 11 & 14
 - Code::Blocks 16.01
 - Visual Studio 2017
