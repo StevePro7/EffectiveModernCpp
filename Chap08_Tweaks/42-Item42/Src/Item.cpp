@@ -74,7 +74,7 @@ int main()
     std::vector<std::regex> regexes;
 
     // add nullptr to container of regexes?
-    regexes.emplace_back( nullptr );
+    // regexes.emplace_back( nullptr );		// error! NULL reference
 
     // error! won't compile
     // std::regex r = nullptr;
@@ -84,7 +84,7 @@ int main()
 
 
     // regex constructor takes const char* pointer is explicit
-    std::regex upperCaseWord( "[A-Z+" );
+    // std::regex upperCaseWord( "[A-Z+" );	// error! NULL reference
 
     // that's why these lines do not compile
     // error! won't compile
@@ -95,18 +95,18 @@ int main()
 
 
     // However, this compiles
-    std::regex r( nullptr );
+    // std::regex r( nullptr );	// error! NULL reference
 
     // error! won't compile
     // std::regex r1 = nullptr;
 
     // compiles
-    std::regex r2( nullptr );
+    // std::regex r2( nullptr );	// error! NULL reference
 
 
     // compiles.
     // Direct init permits use of explicit std::regex constructor taking a pointer
-    regexes.emplace_back( nullptr );
+    // regexes.emplace_back( nullptr );	// error! NULL reference
 
     // error! copy init forbids use of that constructor
     // regexes.push_back( nullptr );
