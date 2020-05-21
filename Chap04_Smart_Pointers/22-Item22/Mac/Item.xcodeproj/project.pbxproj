@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		808160D81FC70430009F28BC /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 808160D71FC70430009F28BC /* Item.cpp */; };
+		8096D87F24768DCF008C0CE9 /* anWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8096D87B24768DCE008C0CE9 /* anWidget.cpp */; };
+		8096D88024768DCF008C0CE9 /* anGadget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8096D87D24768DCF008C0CE9 /* anGadget.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		804611B81FC7007A00571F28 /* Item */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Item; sourceTree = BUILT_PRODUCTS_DIR; };
 		808160D71FC70430009F28BC /* Item.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Item.cpp; path = ../Src/Item.cpp; sourceTree = SOURCE_ROOT; };
+		8096D87B24768DCE008C0CE9 /* anWidget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = anWidget.cpp; path = ../../Src/anWidget.cpp; sourceTree = "<group>"; };
+		8096D87C24768DCF008C0CE9 /* anGadget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = anGadget.h; path = ../../Src/anGadget.h; sourceTree = "<group>"; };
+		8096D87D24768DCF008C0CE9 /* anGadget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = anGadget.cpp; path = ../../Src/anGadget.cpp; sourceTree = "<group>"; };
+		8096D87E24768DCF008C0CE9 /* anWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = anWidget.h; path = ../../Src/anWidget.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,10 @@
 		804611BA1FC7007A00571F28 /* Item */ = {
 			isa = PBXGroup;
 			children = (
+				8096D87D24768DCF008C0CE9 /* anGadget.cpp */,
+				8096D87C24768DCF008C0CE9 /* anGadget.h */,
+				8096D87B24768DCE008C0CE9 /* anWidget.cpp */,
+				8096D87E24768DCF008C0CE9 /* anWidget.h */,
 				808160D71FC70430009F28BC /* Item.cpp */,
 			);
 			path = Item;
@@ -119,7 +129,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8096D87F24768DCF008C0CE9 /* anWidget.cpp in Sources */,
 				808160D81FC70430009F28BC /* Item.cpp in Sources */,
+				8096D88024768DCF008C0CE9 /* anGadget.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
