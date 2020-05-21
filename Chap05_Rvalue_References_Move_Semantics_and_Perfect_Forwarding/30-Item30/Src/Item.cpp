@@ -12,14 +12,6 @@ void f( std::size_t val )
 {
 }
 
-// accept any argument
-template<typename T>
-void fwd( T&& param )
-{
-    // forward it to f
-    f( std::forward<T>( param ) );
-}
-
 // accept any arguments
 template<typename... Ts>
 void fwd( Ts&&... params )
@@ -34,6 +26,14 @@ void f( int( *pf )(int) )
 }
 void f2( int pf( int ) )
 {
+}
+
+// accept any argument
+template<typename T>
+void fwd( T&& param )
+{
+    // forward it to f
+    f( std::forward<T>( param ) );
 }
 
 int processVal( int value )
@@ -97,6 +97,5 @@ int main()
 
                                                     // copy bitfield value
     auto length = static_cast<std::uint16_t>(h.totalLength);
-
     return 0;
 }

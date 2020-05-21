@@ -2,12 +2,10 @@
 
 #include <cstddef>
 
-class Widget
+namespace Widget
 {
-public:
     // MiVals declaration
-    static const std::size_t MinVals = 28;
-
+    static const int MinVals = 28;
 };
 
 
