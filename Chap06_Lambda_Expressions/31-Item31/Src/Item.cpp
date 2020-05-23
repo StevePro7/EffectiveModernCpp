@@ -23,6 +23,5 @@ int main()
     FilterContainer filters;
     filters.emplace_back( []( int value ) {return value % 5 == 0; } );
 
-
     return 0;
 }
