@@ -5,3 +5,4 @@
 *Debug*
 *.plist
 *.xcuserstate
+*.depend

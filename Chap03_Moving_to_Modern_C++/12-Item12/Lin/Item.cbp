@@ -32,10 +32,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="../Src/Data00.h" />
+		<Unit filename="../Src/Data01.h" />
+		<Unit filename="../Src/Data02.h" />
+		<Unit filename="../Src/Data03.h" />
 		<Unit filename="../Src/Item.cpp" />
-		<Extensions>
-			<code_completion />
-			<debugger />
-		</Extensions>
+		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
