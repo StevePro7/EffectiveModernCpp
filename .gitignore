@@ -6,3 +6,4 @@
 *.plist
 *.xcuserstate
 *.depend
+*.layout
